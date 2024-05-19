@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+          background-color: antiquewhite;
+      }
+      
+      header {
+          background-color: rgb(209, 136, 40);
+          text-align: center;
+      }
+      
+      h1 {
+          background-color: rgb(215, 250, 240);
+          text-align: center;
+      }
+      
+      h2 {
+          background-color: rgb(245, 146, 17);
+          text-align: center;
+      }
+      
+      img.highlight {
+          max-width: 200px;
+          max-height: 200px;
+          box-shadow: 5px 15px;
+      }
+/* Styling for the footer section */
+footer {
+          background-color: #333; /* Dark background for footer */
+          color: #fff; /* White text color */
+          padding: 10px 0; /* Padding for top and bottom */
+          text-align: center; /* Center align text */
+      }
+      
+      /* Styling for the hr element */
+      hr {
+          border: 0; /* Remove default border */
+          height: 2px; /* Set height */
+          background: #333; /* Dark background color */
+          margin: 20px 0; /* Margin for spacing */
+      }
+      
+      /* Styling for the section element */
+      section {
+          margin: 20px; /* Margin around section */
+          padding: 20px; /* Padding inside section */
+          border: 1px solid #ccc; /* Light gray border */
+          background-color: #f9f9f9; /* Light background color */
+      }
+            
