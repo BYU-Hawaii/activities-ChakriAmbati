@@ -1,22 +1,22 @@
 figure {
-          margin: 20px 0;
-          padding: 10px;
-          border: 1px solid #eb9030;
-          background-color: #a3e3ea;
-      }
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #5d05c9;
+    background-color: #85c768;
+}
       
-      figure img {
-          width: 100%;
-          border-radius: 8px;
-          box-shadow: 3px 3px 10px rgba(229, 195, 155, 0.1);
-      }
+figure img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(136, 98, 54, 0.1);
+}
       
-      figcaption {
-          font-size: 0.9em;
-          font-weight: bold;
-          text-align: center;
-          color: black;
-          margin-top: 10px;
+figcaption {
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(219, 29, 29);
+    margin-top: 10px;
       
-      }
+}
       
