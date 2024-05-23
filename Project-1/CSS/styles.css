@@ -1,22 +1,74 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif; /* A simple, clean font for the whole page */
+    color: #333; /* Dark grey text for readability */
+    background-color: #f5f5f5; /* Light grey background for subtle contrast */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #c1d3c2; /* A cohesive green background for headers */
+    color: white; /* White text for contrast */
+    padding: 15px 20px; /* Padding for spacing */
+    text-align: center; /* Centered text */
+    font-size: 1.5em; /* Slightly larger font size */
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px; /* Limiting the width for better readability */
+    margin: 0 auto; /* Centering the container */
+    padding: 20px; /* Padding inside the container */
+    background-color: white; /* White background for content areas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+/* Image and figure styles */
 figure {
-    margin: 20px 0;
-    padding: 10px;
-    border: 1px solid #5d05c9;
-    background-color: #85c768;
+    margin: 20px 0; /* Vertical spacing before and after the figure */
+    padding: 10px; /* Padding inside the figure */
+    border: 1px solid #eb9030; /* Border color to match the design */
+    background-color: #48686b; /* Background color for the figure */
+    border-radius: 8px; /* Rounded corners for consistency */
 }
-      
+
 figure img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 3px 3px 10px rgba(136, 98, 54, 0.1);
+    width: 100%; /* Responsive image width */
+    border-radius: 8px; /* Matching rounded corners */
+    box-shadow: 3px 3px 10px rgba(229, 195, 155, 0.1); /* Soft shadow */
 }
-      
+
 figcaption {
-    font-size: 0.9em;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(219, 29, 29);
-    margin-top: 10px;
-      
+    font-size: 0.9em; /* Slightly smaller font size */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Centered caption */
+    color: black; /* Black text color */
+    margin-top: 10px; /* Space above the caption */
 }
-      
+
+/* List styles */
+ul, ol {
+    margin: 20px 0; /* Vertical spacing for lists */
+    padding: 0 20px; /* Padding for better readability */
+    color: #c53838; /* Matching text color */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+    line-height: 1.5; /* Better line spacing for readability */
+}
+
+/* Footer styles */
+footer {
+    background-color: #bbcfbb; /* Matching header background color */
+    color: rgb(10, 6, 6); /* White text for contrast */
+    padding: 10px 20px; /* Padding for spacing */
+    text-align: center; /* Centered text */
+    font-size: 0.9em; /* Slightly smaller font size */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
