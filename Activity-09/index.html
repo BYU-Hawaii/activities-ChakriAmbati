@@ -4,41 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two-Column Layout with Flexbox and Floating Images</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="CSS/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>The Indian Films</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item"><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li class="menu-item dropdown">
+                <a href="#DailyUpdate"><i class="fas fa-concierge-bell"></i>Daily Update</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#Login"><i class="fas fa-paint-brush"></i>Login</a></li>
+                    <li><a href="#Register"><i class="fas fa-sharp fa-solid fa-dna"></i>Register</a></li>
+                    <li><a href="#Profile"><i class="fas fa-helmet-safety"></i>Profile</a></li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <a href="#Help"><i class="fas fa-phone"></i>Help</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#email"><i class="fas fa-envelope-open"></i> Email</a></li>
+                    <li><a href="#contact"><i class="fas fa-intercom"></i> Contact</a></li>
+                    <li><a href="#social-media"><i class="fas fa-share-alt"></i> Social Media</a></li>
+                </ul>
+            <li class="menu-item"><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>    
+        </ul>
+    </nav>
 
-    <main>
-        <section class="flex-container">
+    <div class="container">
+        <div class="two-column-layout">
             <div class="column">
-                <h2>Column 1</h2>
-                <p>The content</p>
+                <h2>Bollywood Updates</h2>
+                <p>Worldwide famous industry for many people who loves like a crazy.</p>
             </div>
             <div class="column">
-                <h2>Column 2</h2>
-                <p>The Content</p>
+                <h2>South Indian Cinema</h2>
+                <p>Tollywood industry who makes proud to be in INDIAN cinema industry.</p>
             </div>
-        </section>
+        </div>
+        
+        <div class="float-section">
+            <img src="images/news.png" alt="Placeholder Image" class="float-image">
+            <h3>Latest News in the Indian Film Industry (May 2024)</h3>
 
-        <section class="floated-container">
-            <img src="news.png" alt="Floated Image">
-            <p></p>
-        </section>
-    </main>
+            <p>The Indian film industry, known for its vibrant and diverse output, is one of the largest and most prolific in the world. Here are some key aspects:</p>
+                <p><strong>Cannes Film Festival</strong></p>
+                    <p>1. Indian cinema made a significant impact at the Cannes Film Festival 2024. The film "All We Imagine As Light" garnered critical acclaim, highlighting the growing presence of Indian films on the global stage.</p>
+                    <p>2. This success, achieved independently of major industry support, emphasizes the creative potential within Indian cinema despite challenges in domestic distribution​.</p>
+
+                <p><strong>Bollywood Updates</strong></p>    
+                    <p>1. In Bollywood, the release calendar is packed with highly anticipated films. Notable upcoming releases include "No Entry 2," directed by Anees Bazmee, amidst ongoing tensions between Anil Kapoor and Boney Kapoor.</p>
+                    <p>2. Ayushmann Khurrana is in talks to portray Sourav Ganguly in an upcoming biographical drama, potentially directed by Aishwarya Rajinikanth​.</p>
+
+                <p><strong>South Indian Cinema</strong></p>
+                    <p>1. The South Indian film industry continues to thrive, with notable projects across Tollywood (Telugu), Kollywood (Tamil), Mollywood (Malayalam), and Sandalwood (Kannada).</p>
+                    <p>2. The diversity and regional specificity of these industries contribute to the richness of Indian cinema.</p>
+                    <p>3. The Recent reports highlight the increasing collaboration and cross-industry projects, expanding the reach of regional films​.</p>
+
+        </div>
+    </div>
 
     <footer>
-        <p></p>
+        <p>Chakri Ambati &copy;filindustry.2024</p>
     </footer>
 </body>
 </html>
