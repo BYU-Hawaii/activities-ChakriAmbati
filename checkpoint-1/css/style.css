@@ -1,0 +1,109 @@
+/* Base styles for mobile devices */
+body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          background-color: #f0f8ff;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+      
+      header {
+          background-color: #ff6f61;
+          padding: 10px;
+      }
+      
+      header h1 {
+          margin: 0;
+          font-size: 24px;
+          color: #fff;
+      }
+      
+      nav ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+      }
+      
+      nav ul li {
+          display: inline;
+          margin: 0 10px;
+      }
+      
+      nav ul li a {
+          color: #fff;
+          text-decoration: none;
+      }
+      
+      .hero {
+          background-color: #ffcc5c;
+          padding: 20px;
+      }
+      
+      .hero h2 {
+          font-size: 20px;
+          color: #333;
+      }
+      
+      button {
+          background-color: #ff6f61;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+      
+      button:hover {
+          background-color: #e57373;
+      }
+      
+      footer {
+          background-color: #4caf50;
+          color: #fff;
+          padding: 10px;
+          margin-top: auto;
+      }
+      
+      .about, .game, .team {
+          padding: 20px;
+      }
+      
+      .team-member {
+          margin: 10px 0;
+      }
+      
+      .team-member img {
+          max-width: 100px;
+          border-radius: 50%;
+      }
+      
+      .team-member p {
+          font-size: 14px;
+      }
+      
+      /* Media queries for larger screens */
+      @media (min-width: 600px) {
+          header h1 {
+              font-size: 32px;
+          }
+      
+          .hero h2 {
+              font-size: 28px;
+          }
+      
+          .team-member img {
+              max-width: 150px;
+          }
+      }
+      
+      #gameCanvas {
+          border: 2px solid #000;
+          background-color: #f0f8ff;
+          display: block;
+          margin: 0 auto;
+      }
+      
