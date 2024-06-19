@@ -21,7 +21,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
           document.getElementById('passwordFeedback').textContent = passwordValid ? '' : 'Password should be at least 8 characters long, contain numbers and both lowercase and uppercase letters.';
           document.getElementById('phoneFeedback').textContent = phoneValid ? '' : 'Please enter a valid phone number.';
 
-      
+          
           var formValid = usernameValid && emailValid && passwordValid && phoneValid;
       
           if (formValid) {
