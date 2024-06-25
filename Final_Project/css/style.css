@@ -1,0 +1,149 @@
+/* Base styles for mobile devices */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #93be8b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #0b4853;
+    color: white;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #0b4853;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Hero section styles */
+.hero {
+    background: url('images/kids.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #5557eb;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background-color: #83a13e;
+}
+
+/* Game section styles */
+.game #gameCanvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 20px auto;
+}
+
+/* About section styles */
+.about {
+    padding: 20px;
+}
+
+/* Feedback form styles */
+.feedback form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #31b378;
+    box-shadow: 0 0 10px rgba(214, 104, 104, 0.1);
+    border-radius: 10px;
+}
+
+.feedback form label,
+.feedback form input,
+.feedback form textarea,
+.feedback form select,
+.feedback form button {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.feedback form input,
+.feedback form textarea,
+.feedback form select {
+    padding: 10px;
+    border: 1px solid #d70606;
+    border-radius: 5px;
+}
+
+.feedback form button {
+    background-color: #0ac3e9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.feedback form button:hover {
+    background-color: #447fde;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .feedback form {
+        padding: 10px;
+    }
+}
