@@ -1,32 +1,39 @@
+<!-- game.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Game</title>
+    <title>Alphabet Hunt - Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Fun & Interesting Game</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="game.html">Game</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="content.html">Content</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="game">
-            <canvas id="gameCanvas" width="480" height="320"></canvas>
-        </section>
+        <h1>Alphabet Hunt</h1>
+        <div id="prompt">Click the letter: <span id="target-letter">A</span></div>
+        <div id="letters-container"></div>
+        <div class="feedback" id="feedback"></div>
+        <button id="next-button" style="display: none;">Next</button>
+        <div id="score">Score: 0</div>
+        <button id="show-score-button">Show Final Score</button>
+        <div id="final-score"></div>
+        <button id="replay-button" style="display: none;">Replay</button>
     </main>
     <footer>
-        <p>&copy; 2024 Fun Learning Games.</p>
+        <p>&copy; 2024 Fun Learning. All rights reserved.</p>
     </footer>
+
     <script src="scripts/game.js"></script>
 </body>
 </html>

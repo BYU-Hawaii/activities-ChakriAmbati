@@ -1,105 +1,114 @@
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
+// game.js
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let targetLetter = '';
+let score = 0;
+let gameFinished = false;
 
-canvas.width = 480;
-canvas.height = 320;
+function getRandomLetter() {
+    return letters[Math.floor(Math.random() * letters.length)];
+}
 
-let x = canvas.width / 2;
-let y = canvas.height - 30;
-let dx = 2;
-let dy = -2;
-let ballRadius = 10;
-let paddleHeight = 10;
-let paddleWidth = 75;
-let paddleX = (canvas.width - paddleWidth) / 2;
-let rightPressed = false;
-let leftPressed = false;
-let points = 0;
-let paddleColor = "#0095DD";
+function displayLetters() {
+    const container = document.getElementById('letters-container');
+    container.innerHTML = '';
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+    // Create an array to hold the options (including the target letter)
+    const options = [];
 
-function keyDownHandler(e) {
-    if (e.key === "Right" || e.key === "ArrowRight") {
-        rightPressed = true;
-    } else if (e.key === "Left" || e.key === "ArrowLeft") {
-        leftPressed = true;
+    // Generate 9 random letters
+    for (let i = 0; i < 9; i++) {
+        options.push(getRandomLetter());
+    }
+
+    // Add the target letter to the options
+    options.push(targetLetter);
+
+    // Shuffle the options array to randomize the order
+    options.sort(() => Math.random() - 0.5);
+
+    // Create div elements for each option
+    options.forEach(letter => {
+        const option = document.createElement('div');
+        option.textContent = letter;
+        option.classList.add('letter');
+        option.addEventListener('click', checkLetter);
+        container.appendChild(option);
+    });
+}
+
+function setTargetLetter() {
+    targetLetter = getRandomLetter();
+    document.getElementById('target-letter').textContent = targetLetter;
+}
+
+function checkLetter(event) {
+    if (gameFinished) return; // Prevent checking after game is finished
+
+    const clickedLetter = event.target.textContent;
+    const feedback = document.getElementById('feedback');
+    if (clickedLetter === targetLetter) {
+        feedback.textContent = 'Great job!';
+        score += 10; // Increase score for correct answer
+        updateScore();
+        disableLetters();
+    } else {
+        feedback.textContent = 'Try again!';
     }
 }
 
-function keyUpHandler(e) {
-    if (e.key === "Right" || e.key === "ArrowRight") {
-        rightPressed = false;
-    } else if (e.key === "Left" || e.key === "ArrowLeft") {
-        leftPressed = false;
-    }
+function updateScore() {
+    document.getElementById('score').textContent = `Score: ${score}`;
 }
 
-function drawBall() {
-    ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-    ctx.fillStyle = "#0095DD";
-    ctx.fill();
-    ctx.closePath();
+function disableLetters() {
+    const letters = document.querySelectorAll('.letter');
+    letters.forEach(letter => {
+        letter.removeEventListener('click', checkLetter);
+    });
+    
+    // Show next button after correct answer
+    document.getElementById('next-button').style.display = 'block';
 }
 
-function drawPaddle() {
-    ctx.beginPath();
-    ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = paddleColor;
-    ctx.fill();
-    ctx.closePath();
+document.getElementById('next-button').addEventListener('click', () => {
+    gameFinished = false; // Reset game state
+    document.getElementById('feedback').textContent = '';
+    document.getElementById('next-button').style.display = 'none';
+    setTargetLetter();
+    displayLetters();
+    enableLetters();
+});
+
+function enableLetters() {
+    const letters = document.querySelectorAll('.letter');
+    letters.forEach(letter => {
+        letter.addEventListener('click', checkLetter);
+    });
 }
 
-function drawPoints() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Points: " + points, 8, 20);
-}
+document.getElementById('show-score-button').addEventListener('click', () => {
+    document.getElementById('final-score').textContent = `Final Score: ${score}`;
+    document.getElementById('show-score-button').style.display = 'none';
+    document.getElementById('replay-button').style.display = 'block';
+    gameFinished = true; // Set game to finished state
+    disableLetters();
+});
 
-function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+document.getElementById('replay-button').addEventListener('click', () => {
+    gameFinished = false; // Reset game state
+    score = 0; // Reset score
+    updateScore();
+    document.getElementById('final-score').textContent = '';
+    document.getElementById('show-score-button').style.display = 'block';
+    document.getElementById('replay-button').style.display = 'none';
+    setTargetLetter();
+    displayLetters();
+    enableLetters();
+});
 
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBall();
-    drawPaddle();
-    drawPoints();
-
-    if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-        dx = -dx;
-    }
-    if (y + dy < ballRadius) {
-        dy = -dy;
-    } else if (y + dy > canvas.height - ballRadius) {
-        if (x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
-            points++;
-            paddleColor = getRandomColor();
-            canvas.style.backgroundColor = getRandomColor();
-        } else {
-            alert("Game Over! Your score is: " + points);
-            document.location.reload();
-        }
-    }
-
-    if (rightPressed && paddleX < canvas.width - paddleWidth) {
-        paddleX += 7;
-    } else if (leftPressed && paddleX > 0) {
-        paddleX -= 7;
-    }
-
-    x += dx;
-    y += dy;
-
-    requestAnimationFrame(draw);
-}
-
-draw();
+// Initialize game on page load
+window.onload = () => {
+    setTargetLetter();
+    displayLetters();
+    updateScore();
+};
